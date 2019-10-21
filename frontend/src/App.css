@@ -5,9 +5,3 @@
   align-items: center;
   height: calc(100vh - 100px);
 }
-
-.synth {
-  width: 100vw;
-  max-width: 600px;
-  margin: 15px;
-}

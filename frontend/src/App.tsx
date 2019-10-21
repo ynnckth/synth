@@ -9,11 +9,9 @@ export const AudioServiceContext = React.createContext<AudioService>(audioServic
 const App: React.FC = () => {
   return (
     <div className="app">
-      <div className="synth">
-        <AudioServiceContext.Provider value={audioService}>
-          <Synthesizer/>
-        </AudioServiceContext.Provider>
-      </div>
+      <AudioServiceContext.Provider value={audioService}>
+        <AudioServiceContext.Consumer>{audioService => <Synthesizer audioService={audioService}/>}</AudioServiceContext.Consumer>
+      </AudioServiceContext.Provider>
     </div>
   );
 };

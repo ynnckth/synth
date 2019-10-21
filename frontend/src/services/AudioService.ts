@@ -20,6 +20,10 @@ export default class AudioService {
     this.noteOscillators = new Map<string, OscillatorNode>();
   }
 
+  setWaveForm(waveForm: OscillatorType): void {
+    this.oscillatorWaveType = waveForm;
+  }
+
   playNote(note: string): void {
     const noteFrequency = (config.noteFrequencyMappings as NoteFrequencyMapping[])
       .filter(m => m.note === note)[0].frequency;
