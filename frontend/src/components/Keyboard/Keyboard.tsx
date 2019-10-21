@@ -76,18 +76,18 @@ class Keyboard extends React.Component<IProps, IState> {
     return (
       <svg>
         <g id="octave-1">
-        {(config.keyboardKeys as KeyboardKey[])
-          .map(key =>
-            <Key
-              key={`${key.note}1`}
-              note={`${key.note}1`}
-              keyType={key.type}
-              position={key.position}
-              isPressed={this.noteIsActive(`${key.note}1`)}
-              onKeyPressed={(note) => this.playNote(note)}
-              onKeyReleased={(note) => this.releaseNote(note)}
-            />
-          )}
+          {(config.keyboardKeys as KeyboardKey[])
+            .map(key =>
+              <Key
+                key={`${key.note}1`}
+                note={`${key.note}1`}
+                keyType={key.type}
+                position={key.position}
+                isPressed={this.noteIsActive(`${key.note}1`)}
+                onKeyPressed={(note) => this.playNote(note)}
+                onKeyReleased={(note) => this.releaseNote(note)}
+              />
+            )}
         </g>
 
         <g id="octave-2" transform="translate(560.000000, 0.000000)">

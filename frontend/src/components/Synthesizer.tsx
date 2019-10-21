@@ -32,6 +32,7 @@ class Synthesizer extends React.Component<IProps, IState> {
   render() {
     return (
       <div className="synth">
+        {/* TODO: improve UI */}
         <select value={this.state.selectedWaveForm} onChange={this.handleWaveFormChanged}>
           <option value="sine">Sine</option>
           <option value="square">Square</option>
