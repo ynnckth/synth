@@ -1,0 +1,64 @@
+{
+  "keyboardKeys": [
+    {
+      "note": "C",
+      "type": "WHITE",
+      "position": 0
+    },
+    {
+      "note": "D",
+      "type": "WHITE",
+      "position": 80
+    },
+    {
+      "note": "E",
+      "type": "WHITE",
+      "position": 160
+    },
+    {
+      "note": "F",
+      "type": "WHITE",
+      "position": 240
+    },
+    {
+      "note": "G",
+      "type": "WHITE",
+      "position": 320
+    },
+    {
+      "note": "A",
+      "type": "WHITE",
+      "position": 400
+    },
+    {
+      "note": "B",
+      "type": "WHITE",
+      "position": 480
+    },
+    {
+      "note": "C#",
+      "type": "BLACK",
+      "position": 60
+    },
+    {
+      "note": "D#",
+      "type": "BLACK",
+      "position": 140
+    },
+    {
+      "note": "F#",
+      "type": "BLACK",
+      "position": 300
+    },
+    {
+      "note": "G#",
+      "type": "BLACK",
+      "position": 380
+    },
+    {
+      "note": "A#",
+      "type": "BLACK",
+      "position": 460
+    }
+  ]
+}
