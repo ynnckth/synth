@@ -60,5 +60,92 @@
       "type": "BLACK",
       "position": 460
     }
+  ],
+  "computerKeyMappings": [
+    {
+      "key": "a",
+      "keyCode": 65,
+      "note": "C1"
+    },
+    {
+      "key": "w",
+      "keyCode": 87,
+      "note": "C#1"
+    },
+    {
+      "key": "s",
+      "keyCode": 83,
+      "note": "D1"
+    },
+    {
+      "key": "e",
+      "keyCode": 69,
+      "note": "D#1"
+    },
+    {
+      "key": "d",
+      "keyCode": 68,
+      "note": "E1"
+    },
+    {
+      "key": "f",
+      "keyCode": 70,
+      "note": "F1"
+    },
+    {
+      "key": "t",
+      "keyCode": 84,
+      "note": "F#1"
+    },
+    {
+      "key": "g",
+      "keyCode": 71,
+      "note": "G1"
+    },
+    {
+      "key": "z",
+      "keyCode": 90,
+      "note": "G#1"
+    },
+    {
+      "key": "h",
+      "keyCode": 72,
+      "note": "A1"
+    },
+    {
+      "key": "u",
+      "keyCode": 85,
+      "note": "A#1"
+    },
+    {
+      "key": "j",
+      "keyCode": 74,
+      "note": "B1"
+    },
+    {
+      "key": "k",
+      "keyCode": 75,
+      "note": "C2"
+    },
+    {
+      "key": "o",
+      "keyCode": 79,
+      "note": "C#2"
+    },
+    {
+      "key": "l",
+      "keyCode": 76,
+      "note": "D2"
+    },
+    {
+      "key": "p",
+      "keyCode": 80,
+      "note": "D#2"
+    },
+    {
+      "key": "ö",
+      "keyCode": 186,
+      "note": "E2"
+    }
   ]
 }

@@ -14,3 +14,9 @@ export enum KeyType {
   BLACK = 'BLACK',
   WHITE = 'WHITE',
 }
+
+export interface ComputerKeyMapping {
+  key: string;
+  keyCode: number;
+  note: string;
+}

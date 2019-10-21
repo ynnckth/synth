@@ -2,12 +2,17 @@ import React from 'react';
 import Key from "./Key";
 import config from '../../app-config.json'
 import {KeyboardKey} from "../../types/types";
+import {getMatchingNote, isAcceptedComputerKey} from "../../Utils";
 
 interface IProps {
 }
 
-interface IState {
+interface ActiveNotes {
   [note: string]: boolean;
+}
+
+interface IState {
+  activeNotes: ActiveNotes | undefined;
 }
 
 class Keyboard extends React.Component<IProps, IState> {
@@ -16,11 +21,51 @@ class Keyboard extends React.Component<IProps, IState> {
 
   constructor(props: IProps) {
     super(props);
-    this.state = {};
+    this.state = {
+      activeNotes: {}
+    };
+    this.handleComputerKeyPressed = this.handleComputerKeyPressed.bind(this);
+    this.handleComputerKeyReleased = this.handleComputerKeyReleased.bind(this);
   }
 
-  noteIsActive(note: string) {
-    return false;
+  componentDidMount(): void {
+    window.addEventListener('keydown', this.handleComputerKeyPressed);
+    window.addEventListener('keyup', this.handleComputerKeyReleased);
+  }
+
+  playNote(note: string): void {
+    this.updateActiveNotes(note, true);
+  }
+
+  releaseNote(note: string): void {
+    this.updateActiveNotes(note, false);
+  }
+
+  private handleComputerKeyPressed(event: KeyboardEvent): void {
+    const playedNote = getMatchingNote(event.key);
+    if (isAcceptedComputerKey(event.key) && !this.noteIsActive(playedNote)) {
+      this.playNote(playedNote);
+    }
+  }
+
+  private handleComputerKeyReleased(event: KeyboardEvent): void {
+    if (isAcceptedComputerKey(event.key)) {
+      const releasedNote = getMatchingNote(event.key);
+      this.releaseNote(releasedNote);
+    }
+  }
+
+  private updateActiveNotes(note: string, isActive: boolean) {
+    this.setState({
+      activeNotes: {
+        ...this.state.activeNotes,
+        [note]: isActive,
+      }
+    });
+  }
+
+  noteIsActive(note: string): boolean {
+    return this.state.activeNotes !== undefined && this.state.activeNotes[note];
   }
 
   render() {
@@ -35,8 +80,8 @@ class Keyboard extends React.Component<IProps, IState> {
               keyType={key.type}
               position={key.position}
               isPressed={this.noteIsActive(`${key.note}1`)}
-              onKeyPressed={() => {}}
-              onKeyReleased={() => {}}
+              onKeyPressed={(note) => this.playNote(note)}
+              onKeyReleased={(note) => this.releaseNote(note)}
             />
           )}
         </g>
@@ -50,8 +95,8 @@ class Keyboard extends React.Component<IProps, IState> {
                 keyType={key.type}
                 position={key.position}
                 isPressed={this.noteIsActive(`${key.note}2`)}
-                onKeyPressed={() => {}}
-                onKeyReleased={() => {}}
+                onKeyPressed={(note) => this.playNote(note)}
+                onKeyReleased={(note) => this.releaseNote(note)}
               />
             )}
         </g>
