@@ -1,8 +1,9 @@
 import React from 'react';
 import Key from "./Key";
 import config from '../../app-config.json'
-import {KeyboardKey} from "../../types/types";
-import {getMatchingNote, isAcceptedComputerKey} from "../../Utils";
+import {KeyboardKey} from '../../types/types';
+import {getMatchingNote, isAcceptedComputerKey} from '../../Utils';
+import AudioService from "../../services/AudioService";
 
 interface IProps {
 }
@@ -18,12 +19,14 @@ interface IState {
 class Keyboard extends React.Component<IProps, IState> {
 
   public state: IState;
+  private audioService: AudioService;
 
   constructor(props: IProps) {
     super(props);
     this.state = {
       activeNotes: {}
     };
+    this.audioService = new AudioService();
     this.handleComputerKeyPressed = this.handleComputerKeyPressed.bind(this);
     this.handleComputerKeyReleased = this.handleComputerKeyReleased.bind(this);
   }
@@ -35,10 +38,12 @@ class Keyboard extends React.Component<IProps, IState> {
 
   playNote(note: string): void {
     this.updateActiveNotes(note, true);
+    this.audioService.playNote(note);
   }
 
   releaseNote(note: string): void {
     this.updateActiveNotes(note, false);
+    this.audioService.releaseNote(note);
   }
 
   private handleComputerKeyPressed(event: KeyboardEvent): void {

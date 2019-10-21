@@ -147,5 +147,75 @@
       "keyCode": 186,
       "note": "E2"
     }
+  ],
+  "noteFrequencyMappings": [
+    {
+      "note": "C1",
+      "frequency": 262
+    },
+    {
+      "note": "C#1",
+      "frequency": 278
+    },
+    {
+      "note": "D1",
+      "frequency": 294
+    },
+    {
+      "note": "D#1",
+      "frequency": 311
+    },
+    {
+      "note": "E1",
+      "frequency": 330
+    },
+    {
+      "note": "F1",
+      "frequency": 349
+    },
+    {
+      "note": "F#1",
+      "frequency": 370
+    },
+    {
+      "note": "G1",
+      "frequency": 392
+    },
+    {
+      "note": "G#1",
+      "frequency": 415
+    },
+    {
+      "note": "A1",
+      "frequency": 440
+    },
+    {
+      "note": "A#1",
+      "frequency": 466
+    },
+    {
+      "note": "B1",
+      "frequency": 494
+    },
+    {
+      "note": "C2",
+      "frequency": 523
+    },
+    {
+      "note": "C#2",
+      "frequency": 554
+    },
+    {
+      "note": "D2",
+      "frequency": 587
+    },
+    {
+      "note": "D#2",
+      "frequency": 622
+    },
+    {
+      "note": "E2",
+      "frequency": 659
+    }
   ]
 }

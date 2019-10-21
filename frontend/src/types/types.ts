@@ -1,9 +1,4 @@
 
-export interface Note {
-  note: string;
-  // TODO: add other properties
-}
-
 export interface KeyboardKey {
   note: string;
   position: number;
@@ -19,4 +14,9 @@ export interface ComputerKeyMapping {
   key: string;
   keyCode: number;
   note: string;
+}
+
+export interface NoteFrequencyMapping {
+  note: string;
+  frequency: number;
 }
