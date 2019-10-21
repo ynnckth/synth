@@ -10,6 +10,8 @@ export default class AudioService {
   oscillatorWaveType: OscillatorType;
 
   constructor() {
+    // @ts-ignore
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContext();
     this.oscillatorWaveType = 'sine'; // TODO: make configurable
     this.gain = this.audioContext.createGain();
