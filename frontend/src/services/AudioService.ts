@@ -13,7 +13,7 @@ export default class AudioService {
     // @ts-ignore
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContext();
-    this.oscillatorWaveType = 'sine'; // TODO: make configurable
+    this.oscillatorWaveType = 'sine';
     this.gain = this.audioContext.createGain();
     this.gain.gain.value = 0.2; // TODO: make configurable
     this.gain.connect(this.audioContext.destination);
