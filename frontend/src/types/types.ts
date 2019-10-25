@@ -20,3 +20,8 @@ export interface NoteFrequencyMapping {
   note: string;
   frequency: number;
 }
+
+export interface SynthWaveForm {
+  waveForm: OscillatorType;
+  imagePath: string;
+}

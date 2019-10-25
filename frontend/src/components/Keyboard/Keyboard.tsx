@@ -74,7 +74,7 @@ class Keyboard extends React.Component<IProps, IState> {
 
   render() {
     return (
-      <svg>
+      <svg viewBox="0 0 1120 600">
         <g id="octave-1">
           {(config.keyboardKeys as KeyboardKey[])
             .map(key =>

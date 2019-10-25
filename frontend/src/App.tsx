@@ -10,9 +10,7 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <AudioServiceContext.Provider value={audioService}>
-        <AudioServiceContext.Consumer>
-          {audioService => <Synthesizer audioService={audioService}/>}
-        </AudioServiceContext.Consumer>
+           <Synthesizer/>
       </AudioServiceContext.Provider>
     </div>
   );
